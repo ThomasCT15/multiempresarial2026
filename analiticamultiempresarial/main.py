@@ -1,20 +1,11 @@
 import pandas as pd
 
-#Codigo principal que ejecutara la ETL (Encargado de ejecutar el analisis de datos)
+from notebook.descripcion.descripcionUsuario import consumir_api_usuarios
 
-from notebook.simulaciones.simulacionUsuario import simular_usuarios
-from notebook.simulaciones.generacionUsuario import convertir_lista_a_fuentes
+from notebook.limpieza.limpiezaUsuario import limpiar_datos_usuario
 
-#TAREA: importar en esta linea su funcion simuladora de gastos
-#TAREA: importar en esta linea su funcion gemeradora de fuentes csv/json de gastos
-
-usuarios=simular_usuarios(1000)
-convertir_lista_a_fuentes(usuarios)
-
-#TAREA: Cree la variable gastos=a su funcion
-#TAREA: llamar a convertirlistade gastos en fuentes
-
-
-data_frame_usuarios=pd.DataFrame(usuarios)
-#Tarea crear un data frame de gastos
-
+from notebook.transformacion.transformarUsuario import promedio_edad_por_correo
+from notebook.transformacion.transformarUsuario import suma_edades_jovenes_por_nombre
+from notebook.transformacion.transformarUsuario import usuarios_por_edad_en_rango
+from notebook.transformacion.transformarUsuario import resumen_por_nombre
+from notebook.transformacion.transformarUsuario import usuarios_adultos_por_nombre
