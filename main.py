@@ -1,0 +1,13 @@
+import pandas as pd
+
+from notebook.descripcion.descripcionUsuario import consumir_api_usuarios
+from notebook.descripcion.descripcionGasto import consumir_api_gastos
+
+from notebook.limpieza.limpiezaUsuario import limpiar_datos_usuario
+from notebook.limpieza.limpiezaGasto import limpiar_datos_gasto
+
+from notebook.transformacion.transformarUsuario import promedio_edad_por_correo
+from notebook.transformacion.transformarUsuario import suma_edades_jovenes_por_nombre
+from notebook.transformacion.transformarUsuario import usuarios_por_edad_en_rango
+from notebook.transformacion.transformarUsuario import resumen_por_nombre
+from notebook.transformacion.transformarUsuario import usuarios_adultos_por_nombre
