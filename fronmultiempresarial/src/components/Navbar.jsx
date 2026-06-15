@@ -17,6 +17,7 @@ export default function Navbar() {
           <li><a href="#inicio" className="transition hover:text-white">Inicio</a></li>
           <li><a href="#caracteristicas" className="transition hover:text-white">Características</a></li>
           <li><a href="#gestion" className="transition hover:text-white">Gestión</a></li>
+          <li><a href="#dashboard" className="transition hover:text-white">Dashboard</a></li>
         </ul>
 
         <a href="#gestion" className="btn-marca px-4 py-2 text-sm">

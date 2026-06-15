@@ -15,9 +15,19 @@
 import matplotlib.pyplot as plt
 
 
+#archivo -> si se pasa una ruta (ej: "graficas/linea.png") la grafica se GUARDA
+#           en ese archivo; si es None, la grafica se MUESTRA en pantalla.
+def _mostrar_o_guardar(archivo):
+    if archivo is None:
+        plt.show()                                      #muestra la grafica en pantalla
+    else:
+        plt.savefig(archivo)                            #guarda la grafica en el archivo
+        plt.close()                                     #cierra la figura para liberar memoria
+
+
 #1. GRAFICA DE LINEA
 def grafica_linea(etiquetas_x, valores_y, titulo="Grafica de linea",
-                  nombre_x="Eje X", nombre_y="Eje Y"):
+                  nombre_x="Eje X", nombre_y="Eje Y", archivo=None):
     #etiquetas_x -> lo que va en el eje horizontal (ej: fechas, edades, nombres)
     #valores_y   -> los numeros que se dibujan (ej: montos, cantidades)
 
@@ -30,12 +40,12 @@ def grafica_linea(etiquetas_x, valores_y, titulo="Grafica de linea",
     plt.grid(True, linestyle="--", alpha=0.5)           #rejilla de fondo
     plt.xticks(rotation=45)                             #gira las etiquetas para que no se peguen
     plt.tight_layout()                                  #acomoda todo para que no se corte
-    plt.show()                                          #muestra la grafica en pantalla
+    _mostrar_o_guardar(archivo)                         #muestra o guarda segun el parametro
 
 
 #2. GRAFICA DE BARRAS
 def grafica_barras(categorias, valores, titulo="Grafica de barras",
-                   nombre_x="Categorias", nombre_y="Valores"):
+                   nombre_x="Categorias", nombre_y="Valores", archivo=None):
     #categorias -> los grupos a comparar (ej: nombres, descripciones)
     #valores    -> la altura de cada barra (ej: cantidad, suma, promedio)
 
@@ -46,11 +56,11 @@ def grafica_barras(categorias, valores, titulo="Grafica de barras",
     plt.ylabel(nombre_y)
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.show()
+    _mostrar_o_guardar(archivo)                         #muestra o guarda segun el parametro
 
 
 #3. GRAFICA DE TORTA (pastel)
-def grafica_torta(etiquetas, valores, titulo="Grafica de torta"):
+def grafica_torta(etiquetas, valores, titulo="Grafica de torta", archivo=None):
     #etiquetas -> el nombre de cada porcion (ej: nombres, categorias)
     #valores   -> el tamanio de cada porcion (ej: cantidad, total)
 
@@ -62,7 +72,7 @@ def grafica_torta(etiquetas, valores, titulo="Grafica de torta"):
     plt.title(titulo)
     plt.axis("equal")                                   #para que la torta salga redonda
     plt.tight_layout()
-    plt.show()
+    _mostrar_o_guardar(archivo)                         #muestra o guarda segun el parametro
 
 
 #==============================================================================

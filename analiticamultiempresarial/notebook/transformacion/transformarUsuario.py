@@ -13,6 +13,9 @@ import pandas as pd
 
 
 #1. CUANTOS USUARIOS ADULTOS HAY POR NOMBRE   ->  COUNT
+#GRAFICA EN EL MAIN: grafico de BARRAS VERTICALES
+#   eje X = nombres   /   eje Y = cantidad_usuarios
+#   (compara cantidades entre categorias -> barras)
 def usuarios_adultos_por_nombre(data_frame_usuarios):
 
     #1.1 query: nos quedamos SOLO con los mayores o iguales a 18 anios
@@ -31,6 +34,9 @@ def usuarios_adultos_por_nombre(data_frame_usuarios):
 
 
 #2. PROMEDIO DE EDAD POR CORREO   ->  MEAN
+#GRAFICA EN EL MAIN: grafico de BARRAS HORIZONTALES
+#   eje Y = correo   /   eje X = edad_promedio
+#   (los correos son textos largos -> se ven mejor en horizontal)
 def promedio_edad_por_correo(data_frame_usuarios):
 
     #2.1 query: descartamos edades no validas (nos quedamos con edad > 0)
@@ -49,6 +55,9 @@ def promedio_edad_por_correo(data_frame_usuarios):
 
 
 #3. SUMA DE EDADES DE LOS USUARIOS JOVENES POR NOMBRE   ->  SUM
+#GRAFICA EN EL MAIN: grafico CIRCULAR (pastel / pie)
+#   cada porcion = un nombre   /   tamanio = suma_edades
+#   (muestra como se reparte el total entre los nombres)
 def suma_edades_jovenes_por_nombre(data_frame_usuarios):
 
     #3.1 query: nos quedamos SOLO con los jovenes (menores de 30 anios)
@@ -67,6 +76,9 @@ def suma_edades_jovenes_por_nombre(data_frame_usuarios):
 
 
 #4. CUANTOS USUARIOS HAY POR CADA EDAD (en un rango de edad)   ->  COUNT
+#GRAFICA EN EL MAIN: grafico de LINEA
+#   eje X = edad   /   eje Y = cantidad_usuarios
+#   (la edad es un valor ordenado/continuo -> linea muestra la tendencia)
 def usuarios_por_edad_en_rango(data_frame_usuarios):
 
     #4.1 query: nos quedamos con las edades entre 18 y 40 (rango: dos condiciones)
@@ -85,6 +97,10 @@ def usuarios_por_edad_en_rango(data_frame_usuarios):
 
 
 #5. RESUMEN COMPLETO POR NOMBRE (varias operaciones a la vez)  ->  COUNT + MEAN + SUM
+#GRAFICA EN EL MAIN: grafico de BARRAS AGRUPADAS
+#   eje X = nombres   /   por cada nombre varias barras juntas:
+#   cantidad_usuarios, edad_promedio y suma_edades
+#   (compara las 3 metricas a la vez para cada nombre)
 def resumen_por_nombre(data_frame_usuarios):
 
     #5.1 query: trabajamos solo con usuarios adultos (edad >= 18)

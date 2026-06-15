@@ -17,19 +17,19 @@ def limpiar_datos_usuario(data_frame_usuarios):
 
     #1.1 Se eliminan los espacios si los hay de los campos de tipo texto
     data_frame_usuarios["nombres"]=data_frame_usuarios["nombres"].astype("string").str.strip().str.lower()
-    data_frame_usuarios["contraseña"]=data_frame_usuarios["contraseña"].astype("string").str.strip().str.lower()
+    data_frame_usuarios["contrasena"]=data_frame_usuarios["contrasena"].astype("string").str.strip().str.lower()
     data_frame_usuarios["correo"]=data_frame_usuarios["correo"].astype("string").str.strip().str.lower()
 
     #1.2 Se limpian los datos que no tienen valores esperados
-    valores_esperados_nombres=["Pedro Perez","Fernanda Fernandez","Rocio Rua","Juan Jimenez","Carlos Cuesta","Maria Martinez","Luisa Lopez","Gaston Galeano","Laura Lopez","Miguel Montoya"]
+    valores_esperados_nombres=["pedro perez","fernanda fernandez","rocio rua","juan jimenez","carlos cuesta","maria martinez","luisa lopez","gaston galeano","laura lopez","miguel montoya"]
     data_frame_usuarios["nombres"]=data_frame_usuarios["nombres"].where(
         data_frame_usuarios["nombres"].isin(valores_esperados_nombres),
         pd.NA
     )
 
-    valores_esperados_contraseña=["admin123","admin987","user123","user987","person123","person987","gap123","gap987","love123","love987"]
-    data_frame_usuarios["contraseña"]=data_frame_usuarios["contraseña"].where(
-        data_frame_usuarios["contraseña"].isin(valores_esperados_contraseña),
+    valores_esperados_contrasena=["admin123","admin987","user123","user987","person123","person987","gap123","gap987","love123","love987"]
+    data_frame_usuarios["contrasena"]=data_frame_usuarios["contrasena"].where(
+        data_frame_usuarios["contrasena"].isin(valores_esperados_contrasena),
         pd.NA
     )
 
@@ -53,7 +53,7 @@ def limpiar_datos_usuario(data_frame_usuarios):
     #data_frame_usuarios["fecha"]=pd.to_datetime(data_frame_usuarios["fecha"])
 
     #CASO especial : ELIMINO los registros cuyos datos sean vacios
-    columnas_obligatorias=["id","correo","contraseña"]
+    columnas_obligatorias=["id","correo","contrasena"]
     data_frame_usuarios=data_frame_usuarios.dropna(subset=columnas_obligatorias)
 
 

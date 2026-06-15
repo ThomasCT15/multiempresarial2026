@@ -16,6 +16,9 @@ import pandas as pd
 
 
 #EJERCICIO 1: TOTAL GASTADO POR CATEGORIA (descripcion)   ->  SUM
+#GRAFICA QUE DEBE HACER EL ESTUDIANTE EN EL MAIN: grafica_barras
+#   eje X = descripcion / eje Y = monto_total
+#   (compara cuanto se gasto en cada categoria -> barras)
 def total_gastado_por_descripcion(data_frame_gasto):
     #TAREA 1.1 query: quedarse solo con los gastos cuyo monto sea mayor a 0
     #TAREA 1.2 groupby: agrupar por "descripcion" y SUMAR el monto de cada grupo
@@ -24,6 +27,9 @@ def total_gastado_por_descripcion(data_frame_gasto):
 
 
 #EJERCICIO 2: PROMEDIO DE GASTO POR CATEGORIA (descripcion)   ->  MEAN
+#GRAFICA QUE DEBE HACER EL ESTUDIANTE EN EL MAIN: grafica_barras
+#   eje X = descripcion / eje Y = monto_promedio
+#   (compara el gasto promedio de cada categoria -> barras)
 def promedio_gasto_por_descripcion(data_frame_gasto):
     #TAREA 2.1 query: quedarse solo con los montos validos (monto > 0)
     #TAREA 2.2 groupby: agrupar por "descripcion" y sacar el PROMEDIO (mean) del monto
@@ -32,6 +38,9 @@ def promedio_gasto_por_descripcion(data_frame_gasto):
 
 
 #EJERCICIO 3: CUANTOS GASTOS HIZO CADA USUARIO (id)   ->  COUNT
+#GRAFICA QUE DEBE HACER EL ESTUDIANTE EN EL MAIN: grafica_torta
+#   cada porcion = un usuario (id) / tamanio = cantidad_gastos
+#   (muestra que proporcion de los gastos hizo cada usuario)
 def cantidad_gastos_por_usuario(data_frame_gasto):
     #TAREA 3.1 query: quedarse solo con los gastos cuyo monto sea mayor a 0
     #TAREA 3.2 groupby: agrupar por "id" y CONTAR cuantos gastos tiene cada usuario
@@ -40,6 +49,9 @@ def cantidad_gastos_por_usuario(data_frame_gasto):
 
 
 #EJERCICIO 4: GASTOS GRANDES POR CATEGORIA (filtro por monto)   ->  COUNT
+#GRAFICA QUE DEBE HACER EL ESTUDIANTE EN EL MAIN: grafica_barras
+#   eje X = descripcion / eje Y = cantidad_gastos_grandes
+#   (compara cuantos gastos grandes hay en cada categoria -> barras)
 def gastos_grandes_por_descripcion(data_frame_gasto):
     #TAREA 4.1 query: quedarse SOLO con los gastos grandes (por ejemplo monto > 100000)
     #TAREA 4.2 groupby: agrupar por "descripcion" y CONTAR cuantos gastos grandes hay
@@ -48,6 +60,9 @@ def gastos_grandes_por_descripcion(data_frame_gasto):
 
 
 #EJERCICIO 5: RESUMEN COMPLETO POR CATEGORIA   ->  COUNT + MEAN + SUM
+#GRAFICA QUE DEBE HACER EL ESTUDIANTE EN EL MAIN: grafica_barras (una por metrica)
+#   eje X = descripcion / eje Y = cada metrica:
+#   cantidad_gastos, monto_promedio y monto_total (una grafica de barras por cada una)
 def resumen_por_descripcion(data_frame_gasto):
     #TAREA 5.1 query: quedarse solo con los montos validos (monto > 0)
     #TAREA 5.2 groupby + agg: agrupar por "descripcion" y calcular a la vez:
