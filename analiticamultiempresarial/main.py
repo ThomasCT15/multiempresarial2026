@@ -36,8 +36,20 @@ resumen=resumen_por_nombre(datos_usuarios_limpios)
 #Grafica 1
 carpeta_graficas="graficas"
 os.makedirs(carpeta_graficas,exist_ok=True)
-grafica_barras(adultos["nombres"],adultos["cantidad_usuarios"],"cantidad de usuarios por nombre","nombres","cantidad usuarios",os.path.join(carpeta_graficas,"garfica1.png"))
 
+grafica_barras(adultos["nombres"],adultos["cantidad_usuarios"],"cantidad de usuarios por nombre","nombres","cantidad usuarios",os.path.join(carpeta_graficas,"grafica1.png"))
+
+#Grafica2
+grafica_barras(promedio_correo["correo"],promedio_correo["edad_promedio"],"Edad promedio por correo", "Correo","Edad promedio",os.path.join(carpeta_graficas,"grafica2.png"))
+
+#Grafica 3
+grafica_torta(suma_jovenes["nombres"],suma_jovenes["suma_edades"],"suma de edades de usuarios jovenes por nombre",os.path.join(carpeta_graficas,"grafica3.png"))
+
+#Grafica 4
+grafica_linea(usuarios_por_edad["edad"],usuarios_por_edad["cantidad_usuarios"], "cantidad de usuarios por edad","Edad","Cantidad",os.path.join(carpeta_graficas,"grafica4.png"))
+
+#Grafica 5
+grafica_barras(resumen["nombres"],resumen["cantidad_usuarios"],"Resumen por nombre","Nombres","Cantidad",os.path.join(carpeta_graficas,"grafica5.png"))
 
 
 #Rutina de analisis de datos de gastos
@@ -45,6 +57,7 @@ grafica_barras(adultos["nombres"],adultos["cantidad_usuarios"],"cantidad de usua
 #tarea: crear df con los datos consumidos del api gastos
 #tarea: llamar a la funcion que limpia el df de gastos
 #tarea: llamar a la funcion que agrupa los datos de gastos
+#tarea final graficar las agrupaciones 6,7,8,9,10
 
 
 
