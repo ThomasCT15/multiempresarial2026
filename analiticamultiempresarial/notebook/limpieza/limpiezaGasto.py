@@ -36,7 +36,7 @@ def limpiar_datos_gasto(data_frame_datos):
     #3.1 si es una fecha, verificar que efectivamente sea una fecha
     data_frame_gastos["fechas"]=pd.to_datetime(data_frame_gastos["fechas"])    #Convierte a formato de fecha, si no puede convertirlo lo marca como NaT (Not a Time)
 
-    #CASO ESPECIAL: ELIMINO los registros cuyos datos sean vacios
+    #CASO ESPECIAL: ELIMINO los registros cuyos datos sean vacios.
     columnas_obligatorias=["id","descripciones","montos","fechas"]
     data_frame_gastos=data_frame_gastos.dropna(subset=columnas_obligatorias)
 
